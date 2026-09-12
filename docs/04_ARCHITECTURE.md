@@ -29,11 +29,11 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    A["Trigger fires<br/>(push / schedule / manual click)"] --> B["GitHub spins up a fresh temporary VM"]
+    A["Trigger fires<br/>(push / schedule / manual click)"] --> B["GitHub spins up a fresh temporary machine"]
     B --> C["Checks out your repo's code onto it"]
     C --> D["Logs in to Azure using a short-lived credential"]
     D --> E["Runs the deployment step"]
-    E --> F["VM is destroyed — nothing persists"]
+    E --> F["Machine is destroyed — nothing persists"]
 ```
 
 Every workflow run starts from a completely clean machine, does its job,

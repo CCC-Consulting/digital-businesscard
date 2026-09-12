@@ -28,7 +28,8 @@ A pattern like "hide the photo by default, reveal it once a JS `onload`
 handler fires" can lose a race: if the image finishes loading (and fires
 its `onload` event) *before* the browser's parser even reaches the
 `<script>` tag that's listening for it — which happens more often than
-you'd think on a fast connection or warm CDN cache — the handler never
+you'd think on a fast connection or a warm CDN (Content Delivery Network)
+cache — the handler never
 runs, and the photo stays hidden forever. The fix: show the image by
 default via CSS, and only use `onerror` as the fallback path (which fires
 reliably regardless of timing) if the image genuinely fails to load.

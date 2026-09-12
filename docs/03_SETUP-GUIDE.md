@@ -81,9 +81,10 @@ The reference build uses **Bicep**, Azure's own IaC language — but the same
 idea works just as well with **Terraform** or **ARM templates** if you'd
 rather use one of those instead. Tell your AI assistant which one you want.
 
-This path is also typically paired with **OIDC federated credentials**, so
-GitHub Actions authenticates to Azure with a short-lived token instead of a
-long-lived stored secret — nothing sensitive stored in GitHub at all. See
+This path is also typically paired with **OpenID Connect (OIDC) federated
+credentials**, so GitHub Actions authenticates to Azure with a short-lived
+token instead of a long-lived stored secret — nothing sensitive stored in
+GitHub at all. See
 [how this authentication flow works](04_ARCHITECTURE.md#3-how-github-actions-authenticates-to-azure--the-advanced-path)
 for the diagram.
 
@@ -97,10 +98,12 @@ If you own a domain:
 
 1. In the Azure Portal, on your Static Web App, go to **Custom domains** →
    **Add**.
-2. Add a CNAME record at your DNS provider:
+2. Add a CNAME record (a type of DNS entry that points one address at
+   another) at your DNS provider:
    `card.yourname.com → <your-app>.azurestaticapps.net`.
-3. Once the CNAME is live (minutes to a few hours to propagate), validate
-   the domain in Azure — it auto-issues a free SSL certificate.
+3. Once the CNAME record is live (minutes to a few hours to propagate),
+   validate the domain in Azure — it auto-issues a free SSL certificate
+   (what puts the padlock and `https://` in front of your address).
 
 Double-check the exact spelling of your subdomain everywhere it appears
 (DNS record, Azure config, any hardcoded links in your HTML) — see

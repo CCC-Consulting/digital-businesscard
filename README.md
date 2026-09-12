@@ -1,9 +1,9 @@
 # Build your own NFC/QR digital business card
 
-A personal digital business card — a single static web page, reachable by NFC
-tap or QR code, that works like a modern replacement for a paper business
-card. This repo is a guide + AI prompt for building your **own** version,
-with your own identity and your own design.
+A personal digital business card — a single static web page, reachable by an
+NFC (Near Field Communication) tap or a QR code, that works like a modern
+replacement for a paper business card. This repo is a guide + AI prompt for
+building your **own** version, with your own identity and your own design.
 
 <p align="center">
   <img src="images/hero-section.png" width="45%" alt="Reference card hero section" />
