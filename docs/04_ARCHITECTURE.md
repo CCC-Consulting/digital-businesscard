@@ -7,9 +7,9 @@ start at the top and work down.
 
 ## 0. Picking an editor
 
-You need somewhere to paste the prompt from [docs/02_PROMPT.md](02_PROMPT.md)
-and receive the generated code. A few solid, current options — not an
-exhaustive list, just well-established choices:
+You need somewhere to paste **[the prompt](02_PROMPT.md)** and receive the
+generated code. A few solid, current options — not an exhaustive list, just
+well-established choices:
 
 - **VS Code** (free, Microsoft) — the most widely used code editor overall,
   with the largest extension ecosystem. Add the Claude Code extension,
