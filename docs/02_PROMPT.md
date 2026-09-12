@@ -5,7 +5,7 @@ Cursor, or similar). Attach a screenshot of a reference card — the images in
 this repo's [README](../README.md), or a screenshot from the video — for
 layout and structure inspiration only.
 
-Before you paste it: read **[Prepare your assets](PREPARE-YOUR-ASSETS.md)**
+Before you paste it: read **[Prepare your assets](01_PREPARE-YOUR-ASSETS.md)**
 first. The prompt tells your assistant to interview you about your photo,
 brand, and content — you'll move a lot faster if you already have answers
 ready instead of figuring them out mid-conversation.
@@ -93,4 +93,4 @@ and tell me you did, rather than asking about everything.
 ---
 
 Once you're through the interview and have a working local site, head to
-**[the setup guide](SETUP-GUIDE.md)** to get it live.
+**[the setup guide](03_SETUP-GUIDE.md)** to get it live.

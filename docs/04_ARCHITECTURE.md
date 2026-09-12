@@ -1,7 +1,7 @@
 # How it all fits together
 
 Four diagrams to make sense of GitHub, GitHub Actions, and Azure before you
-dive into the [setup guide](SETUP-GUIDE.md). If you've never worked with any
+dive into the [setup guide](03_SETUP-GUIDE.md). If you've never worked with any
 of these, start at the top and work down.
 
 ## 1. The big picture: from your laptop to a live URL
@@ -43,7 +43,7 @@ repo (like a refreshed `articles.json`).
 
 ## 3. How GitHub Actions authenticates to Azure — the advanced path
 
-The **easy path** in the [setup guide](SETUP-GUIDE.md) has Azure generate a
+The **easy path** in the [setup guide](03_SETUP-GUIDE.md) has Azure generate a
 deployment secret for you automatically, stored in GitHub as an encrypted
 repo secret. That's fine, and simplest to start with.
 
@@ -111,4 +111,4 @@ from your live site, cleaned up automatically once you're done with it.
 
 ---
 
-Ready to build? Head back to **[the setup guide](SETUP-GUIDE.md)**.
+Ready to build? Head back to **[the setup guide](03_SETUP-GUIDE.md)**.

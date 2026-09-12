@@ -1,6 +1,6 @@
 # Prepare your assets
 
-Gather these before you start the prompt in [PROMPT.md](PROMPT.md) — the AI
+Gather these before you start the prompt in [PROMPT.md](02_PROMPT.md) — the AI
 assistant will ask you about most of this, and you'll move faster with
 answers ready rather than figuring them out mid-conversation.
 
@@ -67,7 +67,7 @@ If you don't have a preference, ask your AI assistant to suggest a pairing.
 - **YouTube feed:** your channel's ID (starts with `UC...`). Get this
   directly from **YouTube Studio → Settings → Channel → Advanced
   settings** — don't try to scrape it from your channel page (see
-  [Lessons learned](LESSONS-LEARNED.md) for why that's unreliable).
+  [Lessons learned](05_LESSONS-LEARNED.md) for why that's unreliable).
 
 ## 6. A reference screenshot
 
@@ -86,4 +86,4 @@ have access to add a DNS record for it. This isn't required to get started
 
 ---
 
-Ready? Head to **[the prompt](PROMPT.md)**.
+Ready? Head to **[the prompt](02_PROMPT.md)**.
