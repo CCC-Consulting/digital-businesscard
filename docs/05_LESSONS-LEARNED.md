@@ -66,12 +66,15 @@ every reference by memory.
 
 A strict Content-Security-Policy (`default-src 'none'`, then an explicit
 allow-list) is good practice for a page with no backend and no reason to
-load arbitrary third-party content. An embedded YouTube `<iframe>` player
-would need a `frame-src` exception added to that policy, plus it pulls in
-YouTube's own JavaScript and cookies on every page load. Linking out to
-thumbnail cards instead (rather than embedding a live player) keeps the
-strict policy intact and avoids loading any third-party tracking on page
-load at all.
+load arbitrary third-party content.
+
+> [!WARNING]
+> An embedded YouTube `<iframe>` player would need a `frame-src` exception
+> added to that policy, plus it **pulls in YouTube's own JavaScript and
+> cookies on every page load** — third-party tracking on a page whose
+> whole point is a minimal, no-backend footprint. Linking out to
+> thumbnail cards instead (rather than embedding a live player) keeps the
+> strict policy intact and avoids loading any third-party tracking at all.
 
 ## A paid developer account is a real gate for Apple Wallet, not just Google Wallet
 

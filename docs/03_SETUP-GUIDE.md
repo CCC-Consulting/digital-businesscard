@@ -18,16 +18,18 @@ steps below click faster.
 
 1. Click **New repository** from your GitHub homepage.
 2. Give it a name (e.g. `my-business-card`).
-3. **Public** or **private** both work fine with Azure Static Web Apps —
-   but choose deliberately, don't default to whichever GitHub suggests.
-   A **public** repository means exactly that: anyone on the internet can
-   view every file and the entire commit history, not just the current
-   version. That's usually fine for this project (it's just HTML/CSS/JS,
-   no secrets — the actual deployment credentials live in GitHub's
-   encrypted repo secrets, not in your code), but it's worth an active
-   decision rather than an accident. While you're at it, take a minute to
-   check your GitHub account's existing repositories and settings too, in
-   case anything else there should be private and currently isn't.
+3. **Public** or **private** both work fine with Azure Static Web Apps.
+
+   > [!WARNING]
+   > Choose deliberately — don't default to whichever GitHub suggests. A
+   > **public** repository means anyone on the internet can view **every
+   > file and the entire commit history**, not just the current version.
+   > That's usually fine for this project (it's just HTML/CSS/JS, no
+   > secrets — deployment credentials live in GitHub's encrypted repo
+   > secrets, not your code), but it should be an active decision, not an
+   > accident. While you're at it, **check your GitHub account's existing
+   > repositories and settings too**, in case anything else there should
+   > be private and currently isn't.
 4. Don't add a README/gitignore yet if your AI assistant is going to
    `git init` and push the generated project itself — otherwise you'll need
    to `git pull` first to merge histories.

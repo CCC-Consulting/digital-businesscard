@@ -10,6 +10,13 @@ first. The prompt tells your assistant to interview you about your photo,
 brand, and content — you'll move a lot faster if you already have answers
 ready instead of figuring them out mid-conversation.
 
+> [!WARNING]
+> Pay close attention when the assistant asks about **item 6, Privacy**,
+> below. Without blocking search engines and AI crawlers from indexing
+> this page, your name, contact details, and photo can end up **searchable
+> and scraped indefinitely** — this page is meant to be reached only by
+> NFC tap, QR code, or a link you share, not discovered on Google.
+
 ---
 
 ````markdown
