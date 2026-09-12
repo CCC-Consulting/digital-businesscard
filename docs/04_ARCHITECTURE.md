@@ -1,8 +1,38 @@
 # How it all fits together
 
-Four diagrams to make sense of GitHub, GitHub Actions, and Azure before you
-dive into the [setup guide](03_SETUP-GUIDE.md). If you've never worked with any
-of these, start at the top and work down.
+Starts with where you'll actually write things, then five diagrams to make
+sense of GitHub, GitHub Actions, and Azure before you dive into the
+[setup guide](03_SETUP-GUIDE.md). If you've never worked with any of these,
+start at the top and work down.
+
+## 0. Picking an editor
+
+You need somewhere to paste the prompt from [docs/02_PROMPT.md](02_PROMPT.md)
+and receive the generated code. A few solid, current options — not an
+exhaustive list, just well-established choices:
+
+- **VS Code** (free, Microsoft) — the most widely used code editor overall,
+  with the largest extension ecosystem. Add the Claude Code extension,
+  GitHub Copilot, or a ChatGPT/Codex extension on top of it.
+- **Cursor** — a VS Code–based editor built specifically around AI-assisted
+  coding, with AI models integrated natively rather than added on as an
+  extension.
+- **Windsurf** — another AI-native editor (also VS Code–based), with a
+  built-in agentic coding assistant.
+- **JetBrains IDEs** (WebStorm, IntelliJ, and similar) — a more traditional
+  professional IDE lineup, with official AI Assistant and GitHub Copilot
+  plugins available.
+- **Zed** — a newer, fast, lightweight editor with AI features built in
+  from the ground up rather than bolted on.
+
+If you're using **Claude Code** specifically (what the reference build
+used), note that it's a command-line tool that runs inside a terminal —
+usable from VS Code's built-in terminal, as a dedicated VS Code/JetBrains
+extension, or entirely standalone, rather than being an editor itself.
+
+One note in passing: **Atom**, once a popular free editor from GitHub, was
+officially discontinued in December 2022 and is no longer maintained —
+worth knowing if you come across older recommendations for it.
 
 ## 1. The big picture: from your laptop to a live URL
 
