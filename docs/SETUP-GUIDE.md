@@ -4,6 +4,10 @@ Your AI assistant can write all the code, but it can't click "Create
 account" for you. Here's the rest, in order. You don't need to be a
 developer to get through this — about an hour, start to finish.
 
+If GitHub, GitHub Actions, or Azure are new concepts to you, read
+**[the architecture diagrams](ARCHITECTURE.md)** first — it'll make the
+steps below click faster.
+
 ## 1. Create a free GitHub account
 
 1. Go to [github.com](https://github.com) and sign up (free tier is all you
@@ -66,9 +70,10 @@ credentials** so GitHub Actions authenticates to Azure with a short-lived
 token instead of a long-lived stored secret, and define the Static Web App
 as Bicep/infrastructure-as-code instead of clicking through the Portal.
 Worth doing once you're comfortable — nothing sensitive is stored in
-GitHub at all, and your infrastructure is reproducible from code. If you
-want this, tell your AI assistant "set this up with OIDC and Bicep instead
-of a stored deployment token."
+GitHub at all, and your infrastructure is reproducible from code. See
+[how this authentication flow works](ARCHITECTURE.md#3-how-github-actions-authenticates-to-azure--the-advanced-path)
+for the diagram. If you want this, tell your AI assistant "set this up
+with OIDC and Bicep instead of a stored deployment token."
 
 ## 5. A custom domain (optional)
 
@@ -89,7 +94,8 @@ easier to make than it sounds.
 ## 6. How the content-feed automation is set up
 
 If you asked for a "latest articles" or "latest videos" section, here's
-what your AI assistant should have built, and why:
+what your AI assistant should have built, and why (see also the
+[diagram of this loop](ARCHITECTURE.md#4-how-the-content-refresh-automation-works)):
 
 - **The problem:** if your page's own JavaScript tries to `fetch()` an RSS
   feed or a YouTube feed directly from someone else's domain, the browser

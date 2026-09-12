@@ -28,7 +28,11 @@ yours, not a copy of this one.
    click through for you — creating a GitHub account, a repository, and a
    free Azure Static Web App, plus a plain-language explanation of how the
    automated content-refresh workflows are wired up.
-4. **[Read the lessons learned](docs/LESSONS-LEARNED.md)** — real bugs hit
+4. **New to GitHub Actions or Azure?** **[See the diagrams](docs/ARCHITECTURE.md)**
+   first — five Mermaid diagrams walking through what actually happens
+   between `git push` and your card being live, including how the
+   automation and (optionally) secret-free Azure login work.
+5. **[Read the lessons learned](docs/LESSONS-LEARNED.md)** — real bugs hit
    building the reference card (a silently-broken "Save Contact" button on
    iPhone, a photo that wouldn't show in Contacts, a stale RSS feed, and
    more), already baked into the prompt, but worth understanding.
