@@ -10,17 +10,24 @@ answers ready rather than figuring them out mid-conversation.
   frame yourself centered with some breathing room — a tight crop that
   works as a rectangle can end up clipping your head or shoulders once
   it's forced into a circle.
-- **Resolution:** at least **512×512px**, ideally **1024×1024px**. The
-  photo gets displayed small on the page (roughly 120–150px), but it's also
-  embedded directly inside the downloadable contact card, where it may be
-  viewed larger in someone's Contacts app — starting too small (e.g. the
-  300×300px used in the reference build) leaves no headroom if you ever
-  want to reuse the photo somewhere bigger.
+- **Resolution — this is a real trade-off, not a "bigger is safer" call.**
+  The photo isn't a normal lazy-loaded image on this card: it's
+  base64-encoded directly into the page's HTML *and* into the downloadable
+  `.vcf`, so every extra pixel is bytes every visitor downloads on every
+  tap, before anything renders. The reference build deliberately uses
+  **300×300px** — plenty sharp for its ~120–150px on-page display, even on
+  retina screens, and it keeps the page and the contact file as light as
+  possible for a "tap and it's instantly there" NFC card. The trade-off:
+  some Contacts apps show a saved photo larger than that on a full-screen
+  contact view, where 300×300 can look a bit soft. If that matters more to
+  you than shaving page weight, go up to 512×512 or 1024×1024 — just know
+  you're trading load speed for headroom, not fixing an oversight.
 - **Format:** JPEG. It gets base64-encoded and embedded directly into the
   vCard file, so file size matters — a JPEG at reasonable quality settings
-  (not maximum) keeps the final page size sane. Aim for **under ~150–250KB**
-  after export; a lossless PNG at the same resolution can be several times
-  larger for a photograph with no real benefit.
+  (not maximum) keeps the final page size sane and noticeably smaller than
+  a lossless PNG at the same resolution, which can run several times
+  larger for a photograph with no real quality benefit. Aim for **under
+  ~150–250KB** after export regardless of which resolution you pick.
 - **Color profile:** standard sRGB. Avoid embedding an unusual color
   profile if your editing tool offers a choice.
 
