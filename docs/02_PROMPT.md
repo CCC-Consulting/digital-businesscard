@@ -41,7 +41,8 @@ a time, and wait for my answers:
    will use the default `<name>.azurestaticapps.net` URL for now.
 6. **Privacy** — confirm this page should be blocked from search engine
    indexing (robots.txt + meta robots tags) since it's meant to be reached
-   only via NFC/QR, not discovered via Google.
+   only via the site's address (an NFC tap, a QR code, or a shared link),
+   not discovered and indexed via Google or AI engines.
 
 Once I've answered, build a plain HTML/CSS/JS static site (no build step,
 no framework, no backend) with this structure:
@@ -59,7 +60,10 @@ no framework, no backend) with this structure:
   (e.g. `articles.json`, `videos.json`) rather than fetching a third-party
   URL directly from the browser.
 - A `robots.txt` that disallows all crawlers, and a
-  `<meta name="robots" content="noindex, nofollow">` tag.
+  `<meta name="robots" content="noindex, nofollow, noai, noimageai">` tag —
+  the `noai`/`noimageai` directives are a newer convention some AI
+  crawlers respect for opting out of training/indexing use, worth
+  including alongside the standard search-engine directives.
 - A `staticwebapp.config.json` for Azure Static Web Apps with:
   - A strict Content-Security-Policy (`default-src 'none'`, then allow-list
     only what's actually used: `self` + Google Fonts for style/font,
