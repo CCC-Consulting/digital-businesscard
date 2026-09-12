@@ -41,9 +41,12 @@ steps below click faster.
    custom domains, 3 staging environments — plenty for a personal card, at
    no cost.
 
-## 4. Create the Static Web App and connect it to GitHub — the easy path
+## 4. Create the Static Web App and connect it to GitHub — click-ops deployment
 
-This is the fastest way to get live, and what to start with:
+"Click-ops" is the (only half-joking) term for deploying infrastructure by
+clicking through a cloud provider's web console, rather than defining it as
+code. Nothing wrong with it — it's the fastest way to get live, and the
+right place to start:
 
 1. In the Azure Portal, search for **Static Web Apps** → **Create**.
 2. Pick your subscription and resource group (or create a new one, e.g.
@@ -64,18 +67,31 @@ This is the fastest way to get live, and what to start with:
    the workflow run finishes green, your card is live at the
    `*.azurestaticapps.net` URL shown in the Azure Portal.
 
-**A more advanced path exists**, and it's what the reference build actually
-uses: instead of a stored deployment secret, set up **OIDC federated
-credentials** so GitHub Actions authenticates to Azure with a short-lived
-token instead of a long-lived stored secret, and define the Static Web App
-as Bicep/infrastructure-as-code instead of clicking through the Portal.
-Worth doing once you're comfortable — nothing sensitive is stored in
-GitHub at all, and your infrastructure is reproducible from code. See
-[how this authentication flow works](04_ARCHITECTURE.md#3-how-github-actions-authenticates-to-azure--the-advanced-path)
-for the diagram. If you want this, tell your AI assistant "set this up
-with OIDC and Bicep instead of a stored deployment token."
+## 5. The advanced path: Infrastructure as Code (IaC)
 
-## 5. A custom domain (optional)
+Instead of clicking through the Portal, you can define your Static Web App
+as code and deploy it declaratively — this is what the reference build
+actually uses. Worth doing once you're comfortable with the click-ops
+version above, not on your first attempt: your infrastructure becomes
+reproducible, reviewable in a pull request, and versioned alongside your
+site's own code, rather than living only as a set of manual clicks nobody
+remembers making.
+
+The reference build uses **Bicep**, Azure's own IaC language — but the same
+idea works just as well with **Terraform** or **ARM templates** if you'd
+rather use one of those instead. Tell your AI assistant which one you want.
+
+This path is also typically paired with **OIDC federated credentials**, so
+GitHub Actions authenticates to Azure with a short-lived token instead of a
+long-lived stored secret — nothing sensitive stored in GitHub at all. See
+[how this authentication flow works](04_ARCHITECTURE.md#3-how-github-actions-authenticates-to-azure--the-advanced-path)
+for the diagram.
+
+If you want this, tell your AI assistant: "set this up with OIDC and Bicep
+(or Terraform / ARM templates) instead of a stored deployment token and
+clicking through the Portal."
+
+## 6. A custom domain (optional)
 
 If you own a domain:
 
@@ -91,7 +107,7 @@ Double-check the exact spelling of your subdomain everywhere it appears
 [Lessons learned](05_LESSONS-LEARNED.md) for why this specific mistake is
 easier to make than it sounds.
 
-## 6. How the content-feed automation is set up
+## 7. How the content-feed automation is set up
 
 If you asked for a "latest articles" or "latest videos" section, here's
 what your AI assistant should have built, and why (see also the
@@ -116,7 +132,7 @@ what your AI assistant should have built, and why (see also the
 - Zero new infrastructure, zero cost, zero backend server — just a
   scheduled script and a static file.
 
-## 7. Physical NFC card / QR code (optional, no code involved)
+## 8. Physical NFC card / QR code (optional, no code involved)
 
 - A QR code pointing at your card's URL can be generated with any free QR
   generator and printed, added to an email signature, or put on a physical

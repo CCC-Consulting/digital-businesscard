@@ -37,7 +37,7 @@ reliably regardless of timing) if the image genuinely fails to load.
 
 A direct client-side `fetch()` to an external blog's RSS feed was silently
 blocked by CORS (see the setup guide's [content-feed
-section](03_SETUP-GUIDE.md#6-how-the-content-feed-automation-is-set-up)) — the
+section](03_SETUP-GUIDE.md#7-how-the-content-feed-automation-is-set-up)) — the
 page always fell back to its hardcoded placeholder list, with no error
 visible anywhere. Moving the fetch server-side into a scheduled GitHub
 Action (committing a same-origin JSON file) fixed it permanently.

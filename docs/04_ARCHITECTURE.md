@@ -43,7 +43,7 @@ repo (like a refreshed `articles.json`).
 
 ## 3. How GitHub Actions authenticates to Azure — the advanced path
 
-The **easy path** in the [setup guide](03_SETUP-GUIDE.md) has Azure generate a
+The **click-ops path** in the [setup guide](03_SETUP-GUIDE.md) has Azure generate a
 deployment secret for you automatically, stored in GitHub as an encrypted
 repo secret. That's fine, and simplest to start with.
 
