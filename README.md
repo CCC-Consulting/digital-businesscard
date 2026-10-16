@@ -6,9 +6,11 @@ replacement for a paper business card. This repo is a guide + AI prompt for
 building your **own** version, with your own identity and your own design.
 
 <p align="center">
-  <img src="images/hero-section.png" width="45%" alt="Reference card hero section" />
-  <img src="images/qr-section.png" width="45%" alt="Reference card QR fallback section" />
+  <img src="images/hero-section.png" width="45%" alt="Reference card v1.4: hero section and contact buttons" />
+  <img src="images/qr-section.png" width="45%" alt="Reference card v1.4: QR fallback section" />
 </p>
+<p align="center"><sub>The reference card as of v1.4 (October 2026). If you came here
+from the video: it shows an earlier version with the same structure.</sub></p>
 
 This isn't a template to fork and re-skin — it's a prompt designed to make
 your AI coding assistant **ask you questions** about your own identity, your
@@ -51,6 +53,22 @@ yours, not a copy of this one.
 - Zero backend, zero database, zero tracking — a static site with a couple
   of scheduled GitHub Actions workflows doing the only "dynamic" work.
 - Deployed for free on Azure Static Web Apps.
+
+## New in the reference card (v1.4)
+
+The reference card has a few finishing touches that the prompt doesn't ask
+for. If you like them, ask your assistant for them:
+
+- **One clear main action.** "Save Contact" is the only solid gold button,
+  at the top of the grid; every other button is a quieter tile.
+- **Subtle motion that respects the visitor.** A light glint on the photo
+  ring, a one-time shimmer across the name, and sections that rise in as
+  you scroll. All of it switches off when the visitor has "Reduce Motion"
+  turned on.
+- **Readable small print.** Dates and labels meet the 4.5:1 contrast
+  minimum instead of fading into the background.
+- **Better article summaries.** Each post's summary is its SEO description
+  when it has one, rather than the first lines of the post.
 
 ## License
 
