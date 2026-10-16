@@ -58,8 +58,11 @@ no framework, no backend) with this structure:
   a short one-line tagline in my own words, and a few skill/topic "pills."
 - A "Save Contact" button that downloads a `.vcf` (vCard 3.0) file with my
   details, including my photo embedded as inline base64
-  (`PHOTO;ENCODING=b;TYPE=JPEG:<base64>`) — NOT as a remote URL. Use the
-  Blob + `<a download>` pattern for the download trigger, not
+  (`PHOTO;ENCODING=b;TYPE=JPEG:<base64>`) — NOT as a remote URL. Fold
+  every vCard line longer than 75 octets (CRLF followed by a single space,
+  per RFC 2425), applied at runtime when building the vCard so the base64
+  photo stays one unbroken line in the source. Use the Blob +
+  `<a download>` pattern for the download trigger, not
   `window.location.href = 'data:...'`.
 - A grid of tap-to-act buttons for the contact channels I chose.
 - Any optional sections I asked for (content feed / video feed / QR

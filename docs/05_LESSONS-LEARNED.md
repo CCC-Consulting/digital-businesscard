@@ -22,6 +22,17 @@ inside an imported `.vcf` file. The fix: embed the photo directly as
 base64 inside the vCard (`PHOTO;ENCODING=b;TYPE=JPEG:<base64 data>`), which
 every Contacts app can read with no network request at all.
 
+For maximum compatibility, also **fold long lines**. The vCard spec (RFC
+2425/2426) says no line should exceed 75 octets, and an embedded photo
+easily makes a single line of tens of thousands of characters. iOS and
+Android Contacts tolerate the unfolded line, but stricter parsers (older
+desktop and sync clients) can reject the contact or silently drop the
+photo. Folding means breaking each long line every 75 octets with a line
+break followed by a single space, which readers undo when importing. Do it
+at runtime in the function that builds the vCard, so the base64 photo can
+stay one unbroken line in your source and remains easy to regenerate when
+you change the photo.
+
 ## A "fetch on page load" image swap intermittently failed
 
 A pattern like "hide the photo by default, reveal it once a JS `onload`
